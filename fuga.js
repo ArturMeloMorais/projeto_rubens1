@@ -2,20 +2,22 @@ const { Habilidade, Personagem, gerarNumeroAleatorio0_20 } = require("./personag
 const prompt = require('prompt-sync')();
 const { batalha } = require("./batalha.js");
 
+// funcao usada para iniciar a fuga
 function fugir(personagemA, personagemB) {
     console.log("------ A fuga começou ------");
     console.log("3 falhas para ser pego, 3 vitórias para fugir");
 
-    let falhas = 0;
-    let vitorias = 0;
-    let turno = 1;
-    let verificador = false
+    let falhas = 0; //contador de falhas
+    let vitorias = 0; // contador de vittorias 
+    let turno = 1; // contador de turnos
+    let verificador = false // verificasdor de dessistencia usado para parar o while 
 
-    while (falhas <= 3 && vitorias <= 3 && verificador === false) {
+    while (falhas <= 3 && vitorias <= 3 && verificador === false) { //looping para retonar a fuga
         console.log(`---- Turno ${turno} ----`);
 
-        let velocidadePersonagemA = personagemA.velocidade / 2 + gerarNumeroAleatorio0_20();
+        let velocidadePersonagemA = personagemA.velocidade / 2 + gerarNumeroAleatorio0_20(); // usado para determinar a velocidade protagonista
 
+        // funcao para verificar a desistencia
         function correr(velocidade) {
             let continuar = prompt("Digite 1 para continuar fugindo ou 2 para lutar: ");
 
@@ -46,6 +48,8 @@ function fugir(personagemA, personagemB) {
         turno++;
     }
 
+
+    //verificador de vitoria ou derrro ta a ser ajustado
     if (vitorias >= 3) {
         console.log(`Parabéns! ${personagemA.nome} conseguiu fugir com sucesso!`);
     } else if(falhas >= 3) {

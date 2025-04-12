@@ -22,7 +22,7 @@ class Habilidade { // gerrado para reaproveitar a mesma habilladeda
     }
 }
 
-class Personagem {//personagem principal 
+class Personagem {//personagem (pode ser usado para criar npc ou inimigos passivel de alteracoes)
     #nome;
     #ocupacao;
     #habilidade1;
@@ -30,16 +30,14 @@ class Personagem {//personagem principal
     #vida
     #armadura;
     #velocidade;
-    #reputacao;
-    constructor(nome, ocupacao, habilidade1, habilidade2, vida, armadura, velocidade, reputacao) {
+    constructor(nome, ocupacao, habilidade1, habilidade2, vida, armadura, velocidade) {
         this.#nome = nome;
         this.#ocupacao = ocupacao; // serve apenas para textos que precise falar da ocupação
         this.#habilidade1 = habilidade1;
         this.#habilidade2 = habilidade2;
-        this.#vida = vida;
+        this.#vida = vida;  // a definir se regenera apos a luta
         this.#armadura = armadura;
         this.#velocidade = velocidade;
-        this.#reputacao = reputacao;
     }
 
     // Métodos getters
@@ -70,37 +68,19 @@ class Personagem {//personagem principal
         return this.#velocidade;
     }
 
-    get reputacao() {
-        return this.#reputacao;
-    }
 
     set vida(novaVida) {
         if (novaVida >= 0) {
             this.#vida = novaVida;
         } else {
-            console.log("Encerrar jogo"); // Encerrar jogo
+            console.log("Encerrar jogo"); // Encerrar jogo (modificar esse atributo colocando um modo de encerrar o jogo)
         }
     }
 
-    set reputacao(novaReputacao) {
-        if (novaReputacao >= 0) {
-            this.#reputacao = novaVida;
-        } else {
-            console.log("Encerrar jogo"); // nao sei oque fazerr
-        }
-    }
 
     levarDano(dano) {
         this.#vida = this.#vida - dano;  // Atualiza a vida diretamente
     }
-
-    perderReputacao(perca) {
-        this.#reputacao = this.#reputacao - perca;  // diminiur a reputacao 
-    }
-    ganharReputacao(ganho) {
-        this.#reputacao = this.#reputacao + ganho;  // aumentar a reoutacao
-    }
-
 }
 
 const habilidade1 = new Habilidade("tiro", 20); //teste
