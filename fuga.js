@@ -12,7 +12,7 @@ function fugir(personagemA, personagemB) {
     let turno = 1; // contador de turnos
     let verificador = false // verificasdor de dessistencia usado para parar o while 
 
-    while (falhas <= 3 && vitorias <= 3 && verificador === false) { //looping para retonar a fuga
+    while (falhas <= 2 && vitorias <= 2 && verificador === false) { //looping para retonar a fuga
         console.log(`---- Turno ${turno} ----`);
 
         let velocidadePersonagemA = personagemA.velocidade / 2 + gerarNumeroAleatorio0_20(); // usado para determinar a velocidade protagonista

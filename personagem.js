@@ -84,7 +84,7 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
 }
 
 const habilidade1 = new Habilidade("tiro", 20); //teste
-const habilidade2 = new Habilidade("tiro duplo", gerarNumeroAleatorio() + gerarNumeroAleatorio()); //teste
+const habilidade2 = new Habilidade("tiro duplo", gerarNumeroAleatorio0_20() + gerarNumeroAleatorio0_20()); //teste
 
 function gerarNumeroAleatorio0_20() {
     return Math.floor(Math.random() * 21);  // Gera um número aleatório entre 0 e 20
