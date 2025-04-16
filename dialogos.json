@@ -1,0 +1,30 @@
+{
+    "tutorial_batalha": [
+    {
+        "personagem": "Lampião",
+        "fala": "Acorda, cabra! Precisa saber lutar à risca de faca se quiser se juntar ao bando."
+    },
+    {
+        "personagem": "nomeCangaceiro",
+        "fala": "Quem é você?!"
+    },
+    {
+        "personagem": "Lampião",
+        "fala": "Capitão do cangaço. Estou aqui para te ensinar a meter bala nos macacos! Agora, aperte a tecla 'C' para começar."
+    }
+    ],
+    "missao_joia": [
+    {
+        "personagem": "Maria Rendeira",
+        "fala": "Oh, pelo amor de meu Padinho. Me ajude a resgatar a minha jóia de família! Um jagunço a levou..."
+    },
+    {
+        "personagem": "nomeCangaceiro",
+        "fala": "Se acalme, posso ajudar a sinhora. Para onde levaram?"
+    },
+    {
+        "personagem": "Maria Rendeira",
+        "fala": "Para a fazenda do Coronel Francisco de Teixeira. Se adiante, cabra!"
+    }
+    ]
+}

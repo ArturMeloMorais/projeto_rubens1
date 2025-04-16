@@ -1,4 +1,5 @@
-const { Personagem } = require("./personagem");
+const {Personagem, gerarNumeroAleatorio0_20 } = require("./personagem.js");
+const { Habilidade, Armas, Arsenal } = require("./habilidades_arsenal.js");
 
 class Protagonista extends Personagem {
     #reputacao;

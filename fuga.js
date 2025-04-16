@@ -1,4 +1,4 @@
-const { Habilidade, Personagem, gerarNumeroAleatorio0_20 } = require("./personagem.js"); 
+const {Personagem, gerarNumeroAleatorio0_20 } = require("./personagem.js"); 
 const prompt = require('prompt-sync')();
 const { batalha } = require("./batalha.js");
 

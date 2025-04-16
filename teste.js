@@ -2,6 +2,7 @@ const { Habilidade, Personagem, gerarNumeroAleatorio0_20 } = require("./personag
 const prompt = require('prompt-sync')();
 const {batalha, escolherHabilidadeFunc} = require("./batalha.js")
 const {fugir} = require("./fuga.js")
+const { Habilidade, Armas, Arsenal } = require("./habilidades_arsenal.js");
 
 // teste de batalha
 const habilidadeA1 = new Habilidade("Soco", 10, 0);

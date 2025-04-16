@@ -1,26 +1,4 @@
-class Habilidade { // gerrado para reaproveitar a mesma habilladeda
-    #nome
-    #dano
-    #falha    //margem de falha
-    constructor(nome, dano, falha) {
-        this.#nome = nome;
-        this.#dano = dano;
-        this.#falha = falha;
-    }
-
-    // Métodos getters
-    get nome() {
-        return this.#nome;
-    }
-
-    get dano() {
-        return this.#dano;
-    }
-
-    get falha() {
-        return this.#falha;
-    }
-}
+const { Habilidade, Armas, Arsenal } = require("./habilidades_arsenal.js");
 
 class Personagem {//personagem (pode ser usado para criar npc ou inimigos passivel de alteracoes)
     #nome;
@@ -30,7 +8,9 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
     #vida
     #armadura;
     #velocidade;
-    constructor(nome, ocupacao, habilidade1, habilidade2, vida, armadura, velocidade) {
+    #arsenal;
+    #dinheiro;
+    constructor(nome, ocupacao, habilidade1, habilidade2, vida, armadura, velocidade, arsenal, dinheiro) {
         this.#nome = nome;
         this.#ocupacao = ocupacao; // serve apenas para textos que precise falar da ocupação
         this.#habilidade1 = habilidade1;
@@ -38,6 +18,8 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
         this.#vida = vida;  // a definir se regenera apos a luta
         this.#armadura = armadura;
         this.#velocidade = velocidade;
+        this.#arsenal = arsenal;
+        this.#dinheiro = dinheiro;
     }
 
     // Métodos getters
@@ -67,6 +49,9 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
     get velocidade() {
         return this.#velocidade;
     }
+    get dinheiro(){
+        return this.#dinheiro
+    }
 
 
     set vida(novaVida) {
@@ -92,4 +77,4 @@ function gerarNumeroAleatorio0_20() {
 
 
 
-module.exports = { Habilidade, Personagem, gerarNumeroAleatorio0_20 };
+module.exports = { Personagem, gerarNumeroAleatorio0_20 };
