@@ -1,5 +1,5 @@
 const {Personagem, gerarNumeroAleatorio0_20 } = require("./personagem.js");
-const { Habilidade, Armas, Arsenal } = require("./habilidades_arsenal.js");
+const {Habilidades, CaixaItens } = require("./arsenal.js");
 const prompt = require('prompt-sync')();
 
 function batalha(personagemA, personagemB) {
@@ -21,6 +21,7 @@ function batalha(personagemA, personagemB) {
 
         if (personagemB.vida <= 0) {
             console.log(`${personagemB.nome} foi derrotado! ${personagemA.nome} venceu!`);
+            personagemA.receberDinhero(personagemB.dinheiro)
             break;
         }
 
