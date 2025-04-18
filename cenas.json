@@ -1,0 +1,33 @@
+[
+  {
+    "Cena1": "Começo do jogo"
+  },
+  {
+    "Cena2": "TUTORIAL"
+  },
+  {
+    "Descrição": "Tutorial concluído. Ganho de: 50 cruzados novos",
+    "Ganho": "50",
+    "Cena3": "FASE 1 - A JÓIA ROUBADA"
+  },
+  {
+    "Descrição": "Missão da joia concluída. Ganho de 75 cruzados novos",
+    "Ganho": "75",
+    "Cena4": "FASE 2 - A VOLANTE"
+  },
+  {
+    "Descrição": "Missão da . Ganho de:  Mil cruzados novos",
+    "Ganho": "1000",
+    "Cena5": "FASE 3 - CIDADE DO SERTÃO"
+  },
+  {
+    "Descrição": "Missão da . Ganho de:  Mil cruzados novos",
+    "Ganho": "1000",
+    "Cena6": "FASE 4 - FAZENDA DO CORONEL ZÉ RUFINO"
+  },
+  {
+    "Descrição": "Jogo zerado. Você recebeu o título de 'Rei do Cangaço'",
+    "Ganho": "Rei do cangaço",
+    "Cena7": "FIM DE JOGO"
+  }
+]
