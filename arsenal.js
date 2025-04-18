@@ -8,13 +8,13 @@ class Habilidades {
     this.#dano = dano,
     this.#falha = falha
     }
-    getNome(){
+    get nome(){
     return this.#nome
     }
-    getDano(){
+    get dano(){
     return this.#dano
     }
-    getFalha(){
+    get falha(){
     return this.#falha
     }
 }
@@ -44,16 +44,6 @@ class CaixaItens{
 module.exports = {Habilidades , CaixaItens};
 
 
-//const arma1 = new Armas("parabelo",12,5)
-//const arma2 = new Armas ("punhal", 9,4)
+const habilidade1 = new Habilidades("Golpe Rápido", 15, 5);  // Define o nome, dano e chance de falha
+console.log(habilidade1.dano)  // ❌ Vai retornar undefined
 
-
-//const arsenal = new Arsenal()
-
-
-//arsenal.adicionarArmas(arma1)
-//arsenal.adicionarArmas(arma2)
-
-
-//console.log(arsenal.mostrarArmas)
-//arsenal.escolherArma()

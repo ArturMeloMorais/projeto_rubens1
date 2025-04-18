@@ -29,14 +29,6 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
         return this.#ocupacao;
     }
 
-    get habilidade1() {
-        return this.#habilidade1;
-    }
-
-    get habilidade2() {
-        return this.#habilidade2;
-    }
-
     get vida() {
         return this.#vida;
     }
@@ -49,6 +41,24 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
     }
     get dinheiro(){
         return this.#dinheiro
+    }
+
+    // Setters para as habilidades
+    set habilidade1(habilidade) {
+        this.#habilidade1 = habilidade;
+    }
+
+    set habilidade2(habilidade) {
+        this.#habilidade2 = habilidade;
+    }
+
+    // Métodos getters (continuam iguais)
+    get habilidade1() {
+        return this.#habilidade1;
+    }
+
+    get habilidade2() {
+        return this.#habilidade2;
     }
 
 
@@ -66,8 +76,8 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
     }
 }
 
-const habilidade1 = new Habilidade("tiro", 20); //teste
-const habilidade2 = new Habilidade("tiro duplo", gerarNumeroAleatorio0_20() + gerarNumeroAleatorio0_20()); //teste
+const habilidade1 = new Habilidades("tiro", 20); //teste
+const habilidade2 = new Habilidades("tiro duplo", gerarNumeroAleatorio0_20() + gerarNumeroAleatorio0_20()); //teste
 
 function gerarNumeroAleatorio0_20() {
     return Math.floor(Math.random() * 21);  // Gera um número aleatório entre 0 e 20

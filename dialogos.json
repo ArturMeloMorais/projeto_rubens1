@@ -1,30 +1,82 @@
-{
-    "tutorial_batalha": [
+[
     {
-        "personagem": "Lampião",
-        "fala": "Acorda, cabra! Precisa saber lutar à risca de faca se quiser se juntar ao bando."
+       "personagem1": "Lampiao",
+       "fala1": "Acorda, cabra! Precisa saber lutar à risca faca se quiser se juntar ao bando.",
+       "personagem2":"nomeCangaceiro",
+       "fala2":"Quem é você?!",
+       "personagem3":"Lampiao",
+       "fala3":"Capitão do cangaço. Estou aqui para te ensinar a meter bala nos macacos! Agora, aperte a tecla 'C' para começar."
     },
     {
-        "personagem": "nomeCangaceiro",
-        "fala": "Quem é você?!"
+       "personagem4":"Maria Rendeira",
+       "fala4":"Oh, pelo amor de meu Padinho. Me ajude a resgatar a minha jóia de familia! Um jagunço a levou...",
+       "personagem5":"nomeCangaceiro",
+       "fala5":"Se acalme, posso ajudar a sinhora. Para onde levaram?",
+       "personagem6":"Maria Rendeira",
+       "fala6":"Para a fazenda do Coronel Francisco de Texeira. Se adiante cabra!"
     },
     {
-        "personagem": "Lampião",
-        "fala": "Capitão do cangaço. Estou aqui para te ensinar a meter bala nos macacos! Agora, aperte a tecla 'C' para começar."
-    }
-    ],
-    "missao_joia": [
-    {
-        "personagem": "Maria Rendeira",
-        "fala": "Oh, pelo amor de meu Padinho. Me ajude a resgatar a minha jóia de família! Um jagunço a levou..."
-    },
-    {
-        "personagem": "nomeCangaceiro",
-        "fala": "Se acalme, posso ajudar a sinhora. Para onde levaram?"
-    },
-    {
-        "personagem": "Maria Rendeira",
-        "fala": "Para a fazenda do Coronel Francisco de Teixeira. Se adiante, cabra!"
-    }
-    ]
-}
+       "personagem7": "Lampiao",
+       "fala7": "Afinal, o sinhor sabe se virar. Boa sorte cumpadi! Lembre de mantê o zóio aberto pra volante malandro pelas bandas."
+     },
+    
+     {
+       "personagem8": "Narracao",
+       "fala8": "Você chega na região da fazenda do finado coronel Francisco de Texeira, onde a tal da jóia se encontra. Está de noite, e só se ouve as cigarras e seus próprios passos. De repente, um sombra sinistra aparece em sua frente! E ela não parece amigável…"
+     },
+    
+     {
+       "personagem9": "Narracao",
+       "fala9": "Após derrotar o vulto maligno, parece que a lua brilha mais. O cangaceiro retorna a casa de Maria Rendeira, mas antes de bater na porta, se questiona: será que ficar com a jóia não é melhor? Ela deve valer muitíssimo. Ou seria melhor devolver pra senhora?"
+     },
+    
+     {
+       "personagem10": "chefeBando",
+       "fala10": "Ave, o caceteiro daquele volante maldito levou Batoré com ele! (nomeCangaceiro), tu vai atrais dele. Tás em Caju Bunito, na delegacia. Seje rápido antes que o sol esfrie."
+     },
+    
+     {
+       "personagem11": "Narracao",
+       "fala11": "Com pressa, você vai até Caju Bonito, e chega na delegacia. É afastada, abafada e pequena, com apenas um policial cochilando, e seu colega de bando. Ao tentar tirar Batoré das grades, um barulho de tiro acorda o guarda, que te percebe e ataca."
+     },
+    
+     {
+       "personagem12": "Narracao",
+       "fala12": "Depois de uma árdua luta, você e Batoré batem em retirada até o acampamento recém-erguido nas fronteiras da cidade."
+     },
+    
+     {
+       "personagem13": "chefeBando",
+       "fala13": "Ora, e num é que voltaram mermo? Jurei a Mainha que tinhas desembestado de vez. Vamo passar 3 dias na cidade, pra vê se num roubam mais remédio de nois. Vai na venda de Dona Betânia, e compre um cadin de pinga, visse?"
+     },
+    
+     {
+       "personagem14": "Narracao",
+       "fala14": "Você vai em direção à cidade, e se depara em três caminhos diferentes pra ir. Qual você vai?"
+     },
+    
+     {
+       "personagem15": "donaVenda",
+       "fala15": "Boa tarde, querido! Deus bençoe! Quer o quê?"
+     },
+    
+     {
+       "personagem16": "padre",
+       "fala16": "Boa tarde, senhor. Em reza, Nossa Senhora me disse que uma alma abençoada pelo Pai estaria passando por aqui. Vejo pelo menos um pouco de bondade em seu coração. Permita-me que eu ore por você, e peça proteção pela sua vida."
+     },
+    
+     {
+       "personagem17": "Narracao",
+       "fala17": "Você se sente um pouco mais seguro. Talvez a jornada se torne mais fácil."
+     },
+    
+     {
+       "personagem18": "Narracao",
+       "fala18": "Não há ninguém aqui. Talvez Deus não queira se manifestar hoje."
+     },
+    
+     {
+       "personagem19": "Narracao",
+       "fala19": "Você chega na parte residencial da cidade, quando escuta novamente um tiro, tal qual o dia do resgate na delegacia. Alguns civis correm, e uma criança chega aos prantos perto de onde você está."
+     }
+  ]
