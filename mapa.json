@@ -1,38 +1,39 @@
 [
     {
-     "NomeCidade": "----- Piranhas -----", 
-     "Informacoes": "Cidade mais frequentada pelo cangaço. Possuí centro para abastecimento de mantimentos e ajuda dos moradores locais. Algumas volantes espreitam a cidade.", 
-     "Acesso":"Acesso livre. S/ missão obrigatória."   
+     "NomeCidade": "----- Piranhas -----",
+     "Informacoes": "Cidade mais frequentada pelo cangaço. Possuí centro para abastecimento de mantimentos e ajuda dos moradores locais. Algumas volantes espreitam a cidade.",
+     "Acesso":"Acesso livre. S/ missão obrigatória."  
     },
     {
-      "Vila":"----- Vila -----", 
-      "Informacoes": "Centro de moradores. Alguns amigaveis, outros cabuetas.", 
+      "Vila":"----- Vila -----",
+      "Informacoes": "Centro de moradores. Alguns amigaveis, outros cabuetas.",
       "Acesso": "Acesso livre. S/ missão obrigatória."
     },
     {
-      "Delegacia": "----- Delegacia -----", 
-      "Informacoes": "Delegacia regional, famosa no sertão por ser bastante equipada", 
+      "Delegacia": "----- Delegacia -----",
+      "Informacoes": "Delegacia regional, famosa no sertão por ser bastante equipada",
       "Acesso": "A depender. Acesso somente com suborno"
     },
     {
-    "Venda": "----- Mercearia Secos e Molhados -----"
+    "Venda": "----- Mercearia Secos e Molhados -----",
+    "Itens": ["Água ardente", "Curativos", "Munição", "Parabelo", "Colete", "Anéis do sertão", "Carne de sol"]
     },
     {
-     "NomeIgreja": "----- Igreja Piranhas -----", 
-     "Informacoes": "Igreja onde ocorre encontros sociais, acordos e missas. Há boatos que Padre Cicero frequenta o local, curando os cangaçeiros das enfermidades.", 
+     "NomeIgreja": "----- Igreja Piranhas -----",
+     "Informacoes": "Igreja onde ocorre encontros sociais, acordos e missas. Há boatos que Padre Cicero frequenta o local, curando os cangaçeiros das enfermidades.",
      "Acesso": "Acesso livre. S/ missão obrigatória."
     },
     {
-     "NomeCaatinga": "----- Caatinga Profunda -----", 
-     "Informacoes": "Caatinga perigosa, onde possui bandidos, volantes e outros grupos de cangaceiros.", 
+     "NomeCaatinga": "----- Caatinga Profunda -----",
+     "Informacoes": "Caatinga perigosa, onde possui bandidos, volantes e outros grupos de cangaceiros.",
      "Acesso":"Acesso bloqueado. C/ missão obrigatória"
     },
     {
-     "NomeFazenda": "----- Fazenda do Coronel F. de Texeira -----", 
-     "Informacoes": "Fazenda pequena e comandada pelo coronel da região. Alguns jagunços e volantes protegendo.", 
+     "NomeFazenda": "----- Fazenda do Coronel F. de Texeira -----",
+     "Informacoes": "Fazenda pequena e comandada pelo coronel da região. Alguns jagunços e volantes protegendo.",
      "Acesso":"Acesso livre. S/ missão obrigatória.",
-     "NomeFazenda2": "----- Fazenda do Coronel Zé Rufino -----", 
-     "Informacoes2": "Fazenda rica e farta da região. Extremamente perigosa, comandada pelo inimigo dos cangaceiros, Zé Rufino. Muitos jagunços, volantes e apoio do governo Vargas.", 
+     "NomeFazenda2": "----- Fazenda do Coronel Zé Rufino -----",
+     "Informacoes2": "Fazenda rica e farta da região. Extremamente perigosa, comandada pelo inimigo dos cangaceiros, Zé Rufino. Muitos jagunços, volantes e apoio do governo Vargas.",
      "Acesso2": "Acesso bloqueado. C/ missão obrigatória"
     }
 ]
