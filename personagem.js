@@ -123,7 +123,8 @@ const lampiao = new Personagem(
 )
 
 
-
+const faca = new Habilidades("faca", 12, 7)
+const chute = new Habilidades("chute",10, 7 )
 
 const francisctexeira = new Personagem(
     personagens[1].nome,
@@ -131,7 +132,9 @@ const francisctexeira = new Personagem(
     personagens[1].vida,
     personagens[1].armadura,
     personagens[1].velocidade,
-    personagens[1].dinheiro
+    personagens[1].dinheiro,
+    faca,
+    chute
 )
 
 

@@ -7,7 +7,7 @@ const prompt = require("prompt-sync")()
 const { batalha } = require("./batalha.js");
 const { Protagonista } = require("./protagonista.js");
 const { Habilidades, CaixaItens } = require("./arsenal.js");
-const { Personagem, gerarNumeroAleatorio0_20, lampiao } = require("./personagem.js");
+const { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira } = require("./personagem.js");
 
 
 const tutorial = cenas[1].Cena2
@@ -81,8 +81,8 @@ class Fases {
     constructor(nomeFase, status) {
       super(nomeFase,status);
     }
-    missaoDaJoia(){
-      
+    missaoDaJoia(protagonistaA, adversario){
+      let perca
       console.log(dialogos[1].personagem4 + ": " + dialogos[1].fala4)
       console.log(dialogos[1].personagem5 + ": " + dialogos[1].fala5)
       console.log(dialogos[1].personagem6 + ": " + dialogos[1].fala6, "\n")
@@ -91,11 +91,29 @@ class Fases {
       console.log(">>>",Fazenda1.informacoes)
 
       console.log("\n",dialogos[3].personagem8 + ": " + dialogos[3].fala8)
-       
-       // batalhar com o vilão sobrenatural
+      console.log("\n")
+      console.log(`${francisctexeira.nome}: quem é voçe?`)
+      console.log(`${protagonistaA.nome}: eu vim aqui para resgatar a joia que voce roubou`)
+      console.log("Narracao: coronel texeira atira sabendo suas intecoes")
+      const vitoria = batalha(protagonistaA, adversario);
+      console.log("\n")
+      if(vitoria === true){
+        protagonistaA.caixa = protagonistaA.caixa || [];
+        protagonistaA.caixa[0] = "joia";
+      } else {
+        return perca = true
+      }
 
+      
       console.log("\n",dialogos[4].personagem9 + ": " + dialogos[4].fala9)
        //mecânica para escolher ficar ou não com a jóia
+      let decisao = prompt("<<<<<<<<<< Aperte f para ficar com a joia ou qualquer outra tecla para devolver >>>>>>>>>>>: ")
+      if(decisao === "f"){
+        console.log(`narracao: ${protagonistaA.nome} diz para ${dialogos[1].personagem4} que infelizmente nao coseguiu achar a joia`)
+      }else {
+        protagonistaA.caixa[0] = "terço"
+        console.log(`narracao: voce devovel a joia para ${dialogos[1].personagem4} que chorrra de felicidade e lhe da um terço para o proteger`)
+      }
     }
     missaoConcluida(){
        this.status = "fase 1 concluída"

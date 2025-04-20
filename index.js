@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { Habilidades, CaixaItens } = require("./arsenal.js");
-const { Personagem, gerarNumeroAleatorio0_20, lampiao } = require("./personagem.js");
+const { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira } = require("./personagem.js");
 const { batalha } = require("./batalha.js");
 const { Protagonista } = require("./protagonista.js");
 const { fugir } = require("./fuga.js");
@@ -14,12 +14,17 @@ function inicar() {
     let nomeJ = prompt("Digite seu nome de personagem: ");
     let jogador = escolherProta(nomeJ);
 
-    const _tutorial = new Tutorial(tutorial, "não concluído");
+    /*const _tutorial = new Tutorial(tutorial, "não concluído");
 
     console.log(_tutorial.mostrarTutorial);
     _tutorial.iniciarTutorial(jogador, lampiao);
 
-    console.log("\n");
+    console.log("\n");*/
+
+    const _fase1 = new Fase1(fase1, "não concluída")
+    console.table(_fase1.mostrarfase1)
+    _fase1.missaoDaJoia(jogador, francisctexeira)
+    console.log("\n")
 }
 
 inicar();
