@@ -1,37 +1,40 @@
-PPROJETO CANGACEIROS
+  PROJETO CANGACEIROS   
 
-Tecnologias
+Tecnologias :
 
-nodejs
-json
-prompt-sync
+Node JS
+JSON
+Prompt-sync
 
-clone 
+Clone:
  https://github.com/ArturMeloMorais/projeto_rubens1.git
 
- Pré-requisitos
+Pré-requisitos:
 
 nodejs
 prompt-sync
 
-Como usar
+Como usar:
 
 
-Contribuindores
+Contribuidores: 
 
-github
-ricardo rubens
+Github
+Prof. Ricardo Rubens
 
-autores
+Autores:
 
-Artur Melo https://github.com/ArturMeloMorais
+Artur Melo 
+Github:  https://github.com/ArturMeloMorais
+
 Damarys Vitória
+Github:
+
  Esther Menezes
+Github:
+
  Ketlyn Barbosa
+Github: 
 
 
-
-
-
-
-REFERENCIAS
+REFERÊNCIAS:
