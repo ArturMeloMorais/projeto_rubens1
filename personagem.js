@@ -22,7 +22,7 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
         this.#armadura = armadura;
         this.#velocidade = velocidade;
         this.#dinheiro = dinheiro;
-        this.habilidade1 = habilidade1;
+        this.#habilidade1 = habilidade1;
         this.#habilidade2 = habilidade2;
     }
 
@@ -110,6 +110,8 @@ function gerarNumeroAleatorio0_20() {
 
 const pistola = new Habilidades("pistola", 15, 2);
 const tiroduplo = new Habilidades("tiro duplo de escopeta", 50, 2)
+const sombra = new Habilidades('Sombra', 8, 2)
+const medo = new Habilidades('Medo', 20, 6)
 
 const lampiao = new Personagem(
     personagens[0].nome,
@@ -131,7 +133,9 @@ const francisctexeira = new Personagem(
     personagens[1].vida,
     personagens[1].armadura,
     personagens[1].velocidade,
-    personagens[1].dinheiro
+    personagens[1].dinheiro,
+    sombra,
+    medo
 )
 
 

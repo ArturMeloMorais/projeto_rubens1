@@ -56,9 +56,11 @@ class Fases {
       return começar_tutorial
     }
     console.log(dialogos[2].personagem7 + ": " + dialogos[2].fala7)
+    this.tutorialConcluido()
   }
   tutorialConcluido(){
     this.status = "tutorial concluído"
+    return this.status
   }
 
   }
