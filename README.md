@@ -15,6 +15,7 @@
 📝 Pré-requisitos:
 
  - NodeJS
+   
  - Prompt-sync
 #
 🎮Como usar:
@@ -29,17 +30,24 @@
 #
 ✅Autores:
 
-- Artur Melo 
+- Artur Melo
+  
 Github:  https://github.com/ArturMeloMorais
 
 - Damarys Vitória
+  
 Github:
 
 - Esther Menezes
+  
 Github:
 
 - Ketlyn Barbosa
-Github: 
+  
+Github: https://github.com/Nyemoon
 #
 REFERÊNCIAS:
 
+-- Uso de JSON: https://youtu.be/BWPUSXzSWA8?si=h4mSCSwOJIXpeZHq
+
+-- Idéia do Tema : https://classroom.google.com/c/NzA0OTE0MTE4NTkw/a/NzYyMzA2MDg1ODUw/details
