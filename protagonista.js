@@ -12,7 +12,7 @@ class Protagonista extends Personagem {
     #armadura;
     #velocidade;
     #dinheiro;
-    constructor(nome, ocupacao, vida, armadura, velocidade, dinheiro, habilidade1, habilidade2, reputacao, caixaItens) {
+    constructor(nome, ocupacao, vida, armadura,velocidade, dinheiro, habilidade1, habilidade2, reputacao, caixaItens) {
         super(nome, ocupacao, vida, armadura, velocidade, dinheiro, habilidade1, habilidade2);
         this.#reputacao = reputacao;
         this.#caixaItens = caixaItens;
@@ -24,6 +24,10 @@ class Protagonista extends Personagem {
         this.#dinheiro = dinheiro;
         this.#habilidade1 = habilidade1;
         this.#habilidade2 = habilidade2;
+    }
+
+    get dinheiro() {
+        return this.#dinheiro;
     }
 
     get reputacao() {

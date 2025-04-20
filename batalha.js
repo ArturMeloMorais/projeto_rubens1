@@ -6,6 +6,8 @@ function batalha(personagemA, personagemB) {
     console.log(`A batalha começou entre ${personagemA.nome} e ${personagemB.nome}!
 `);
 
+let vitoria
+
     let turno = 1;
     while (personagemA.vida > 0 && personagemB.vida > 0) {
         console.log(`--- Turno ${turno} ---`);
@@ -21,7 +23,7 @@ function batalha(personagemA, personagemB) {
         if (personagemB.vida <= 0) {
             console.log(`${personagemB.nome} foi derrotado! ${personagemA.nome} venceu!`);
             personagemA.receberDinhero(personagemB.dinheiro);
-            break;
+            return vitoria = true
         }
         
         // Personagem B ataca
@@ -42,7 +44,7 @@ function batalha(personagemA, personagemB) {
         
         if (personagemA.vida <= 0) {
             console.log(`${personagemA.nome} foi derrotado! ${personagemB.nome} venceu!`);
-            break;
+            return vitoria = false
         }
 
         turno++;

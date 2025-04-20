@@ -1,0 +1,52 @@
+[
+    {
+      "nome": "Lampião",
+      "ocupacao": "Líder do cangaço",
+      "vida": 150,
+      "armadura": 30,
+      "velocidade": 20,
+      "dinheiro": 5000
+    },
+
+
+    {
+      "nome": "Coronel Francisco de Texeira",
+      "ocupacao": "Coronel da fazenda de gados",
+      "vida": 60,
+      "armadura": 12,
+      "velocidade": 10,
+      "dinheiro": 50
+    },
+
+
+    {
+      "nome": "Volante",
+      "ocupacao": "Policiais do sertão",
+      "vida": 90,
+      "armadura": 19,
+      "velocidade": 14,
+      "dinheiro": 75
+    },
+
+
+    {
+      "nome": "Bandidos da Cidade",
+      "ocupacao": "Invasores",
+      "vida": 100,
+      "armadura": 26,
+      "velocidade": 18,
+      "dinheiro": 1000
+    },
+
+
+    {
+      "nome": "Coronel Zé Rufino",
+      "ocupacao": "Coronel militarizado",
+      "vida": 200,
+      "armadura": 40,
+      "velocidade": 20,
+      "dinheiro": 9999
+    }
+
+
+  ]

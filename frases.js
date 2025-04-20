@@ -4,6 +4,11 @@ const fs = require('fs');
 const dialogos = JSON.parse(fs.readFileSync('./dialogos.json', 'utf-8'));
 const cenas = JSON.parse(fs.readFileSync('./cenas.json', 'utf-8'));
 const prompt = require("prompt-sync")()
+const { batalha } = require("./batalha.js");
+const { Protagonista } = require("./protagonista.js");
+const { Habilidades, CaixaItens } = require("./arsenal.js");
+const { Personagem, gerarNumeroAleatorio0_20, lampiao } = require("./personagem.js");
+
 
 const tutorial = cenas[1].Cena2
 const fase1 = cenas[2].Cena3
@@ -19,11 +24,11 @@ class Fases {
       this.#nomeFase = nomeFase;
       this.#status = status
     }
-    get mostrarTutorial(){
-      return `[${_tutorial.#nomeFase}] \n`
+    get mostrarTutorial() {
+      return `[${this.#nomeFase}] \n`
     }
     get mostrarfase1() {
-      return `[${_fase1.#nomeFase}] \n`
+      return `[${this.#nomeFase}] \n`
     }
   
     get mostrarfase2() {
@@ -43,19 +48,29 @@ class Fases {
     constructor(nomeFase, status) {
       super(nomeFase, status);
   }
-  iniciarTutorial(){
+  iniciarTutorial(protagonistaA, adversario){
+    let armazenarVida = protagonistaA.vida
     console.log(dialogos[0].personagem1 + ": " + dialogos[0].fala1)
     console.log(dialogos[0].personagem2 + ": " + dialogos[0].fala2)
     console.log(dialogos[0].personagem3 + ": " + dialogos[0].fala3, "\n")
     const começar_tutorial = prompt(">>> Aperte na tecla C e dê enter:")
     if(começar_tutorial === "C" || começar_tutorial === "c"){
       console.log("Iniciando ... \n")
+      const vitoria = batalha(protagonistaA, adversario);
+      if(vitoria === true){
+        console.log(lampiao.nome, ": ", "voce é o mais forte")
+     } else {
+      console.log(lampiao.nome, ": ", "estou impressionado")
+      protagonistaA.vida = armazenarVida
+     }
+      console.log(dialogos[2].personagem7 + ": " + dialogos[2].fala7)
+      this.tutorialConcluido()
     }
     else{
       console.log("Tecla incorreta")
       return começar_tutorial
     }
-    console.log(dialogos[2].personagem7 + ": " + dialogos[2].fala7)
+ 
   }
   tutorialConcluido(){
     this.status = "tutorial concluído"
@@ -203,30 +218,47 @@ class Fases {
       // se perder tem outro final específico (mensagem)
     }
   }
-  module.exports = {Fases, Tutorial, Fase1, Fase2, Fase3, Fase4}
- 
- console.log("BEM VINDO AO JOGO DO CANGAÇO!! \n")
- const _tutorial = new Tutorial(tutorial,"não concluído")
- console.log(_tutorial.mostrarTutorial)
- _tutorial.iniciarTutorial()
- console.log("\n")
+  module.exports = { Fases, Tutorial, Fase1, Fase2, Fase3, Fase4, tutorial, fase1, fase2, fase3, fase4, fimjogo }
 
-  const _fase1 = new Fase1(fase1, "não concluída")
-  console.table(_fase1.mostrarfase1)
-  _fase1.missaoDaJoia()
-  console.log("\n")
 
-  const _fase2 = new Fase2(fase2, "não concluída")
-  console.table(_fase2.mostrarfase2)
-  _fase2.missaoResgate()
-  console.log("\n")
 
-  const _fase3 = new Fase3(fase3, "não concluída")
-  console.table(_fase3.mostrarfase3)
-  _fase3.irParaCidade()
-  console.log("\n")
 
-  const _fase4 = new Fase4 (fase4, "não concluída")
-  console.table(_fase4.mostrarfase4)
-  _fase4.irParaFazendaCoronel()
-  _fase4.fimDeJogo
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  console.log(personagemA)
+//  console.log("BEM VINDO AO JOGO DO CANGAÇO!! \n")
+//  const _tutorial = new Tutorial(tutorial,"não concluído")
+//  console.log(_tutorial.mostrarTutorial)
+//  _tutorial.iniciarTutorial(personagemA, personagemB)
+//  console.log("\n")
+
+//   const _fase1 = new Fase1(fase1, "não concluída")
+//   console.table(_fase1.mostrarfase1)
+//   _fase1.missaoDaJoia()
+//   console.log("\n")
+
+//   const _fase2 = new Fase2(fase2, "não concluída")
+//   console.table(_fase2.mostrarfase2)
+//   _fase2.missaoResgate()
+//   console.log("\n")
+
+//   const _fase3 = new Fase3(fase3, "não concluída")
+//   console.table(_fase3.mostrarfase3)
+//   _fase3.irParaCidade()
+//   console.log("\n")
+
+//   const _fase4 = new Fase4 (fase4, "não concluída")
+//   console.table(_fase4.mostrarfase4)
+//   _fase4.irParaFazendaCoronel()
+//   _fase4.fimDeJogo

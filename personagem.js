@@ -1,5 +1,11 @@
 const {Habilidades } = require("./arsenal.js");
 
+
+const fs = require('fs');
+const personagens = JSON.parse(fs.readFileSync('./personagens.json', 'utf-8'));
+const prompt = require("prompt-sync")()
+
+
 class Personagem {//personagem (pode ser usado para criar npc ou inimigos passivel de alteracoes)
     #nome;
     #ocupacao;
@@ -20,18 +26,22 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
         this.#habilidade2 = habilidade2;
     }
 
+
     // Métodos getters
     get nome() {
         return this.#nome;
     }
 
+
     get ocupacao() {
         return this.#ocupacao;
     }
 
+
     get vida() {
         return this.#vida;
     }
+
 
     get armadura() {
         return this.#armadura;
@@ -43,23 +53,29 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
         return this.#dinheiro
     }
 
+
     // Setters para as habilidades
     set habilidade1(habilidade) {
         this.#habilidade1 = habilidade;
     }
 
+
     set habilidade2(habilidade) {
         this.#habilidade2 = habilidade;
     }
+
 
     // Métodos getters (continuam iguais)
     get habilidade1() {
         return this.#habilidade1;
     }
 
+
     get habilidade2() {
         return this.#habilidade2;
     }
+
+
 
 
     set vida(novaVida) {
@@ -71,18 +87,84 @@ class Personagem {//personagem (pode ser usado para criar npc ou inimigos passiv
     }
 
 
+
+
     levarDano(dano) {
         this.#vida = this.#vida - dano;  // Atualiza a vida diretamente
     }
 }
 
+
 const habilidade1 = new Habilidades("tiro", 20); //teste
 const habilidade2 = new Habilidades("tiro duplo", gerarNumeroAleatorio0_20() + gerarNumeroAleatorio0_20()); //teste
 
+
 function gerarNumeroAleatorio0_20() {
     return Math.floor(Math.random() * 21);  // Gera um número aleatório entre 0 e 20
-} // gerador de numeros aleatorios 
+} // gerador de numeros aleatorios
 
 
 
-module.exports = { Personagem, gerarNumeroAleatorio0_20 };
+
+// criar personagens com json
+
+const pistola = new Habilidades("pistola", 15, 2);
+const tiroduplo = new Habilidades("tiro duplo de escopeta", 50, 2)
+
+const lampiao = new Personagem(
+    personagens[0].nome,
+    personagens[0].ocupacao,
+    personagens[0].vida,
+    personagens[0].armadura,
+    personagens[0].velocidade,
+    personagens[0].dinheiro,
+    pistola, 
+    tiroduplo
+)
+
+
+
+
+const francisctexeira = new Personagem(
+    personagens[1].nome,
+    personagens[1].ocupacao,
+    personagens[1].vida,
+    personagens[1].armadura,
+    personagens[1].velocidade,
+    personagens[1].dinheiro
+)
+
+
+const volante = new Personagem(
+    personagens[2].nome,
+    personagens[2].ocupacao,
+    personagens[2].vida,
+    personagens[2].armadura,
+    personagens[2].velocidade,
+    personagens[2].dinheiro
+)
+
+
+const bandidoscidade = new Personagem(
+    personagens[3].nome,
+    personagens[3].ocupacao,
+    personagens[3].vida,
+    personagens[3].armadura,
+    personagens[3].velocidade,
+    personagens[3].dinheiro
+   
+)
+
+
+const zerufino = new Personagem(
+    personagens[4].nome,
+    personagens[4].ocupacao,
+    personagens[4].vida,
+    personagens[4].armadura,
+    personagens[4].velocidade,
+    personagens[4].dinheiro
+ 
+)
+
+
+module.exports = { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira, volante, bandidoscidade, zerufino };
