@@ -178,7 +178,8 @@ class Fases {
     constructor(nomeFase, status) {
       super(nomeFase, status);
     }
-    irParaCidade(protagonistaA, adversario){
+    irParaCidade(protagonistaA, adversario, adversario2){
+     
       console.log(Cidade.nomelocal,"\n")
       console.log(">>>",Cidade.informacoes)
 
@@ -186,20 +187,20 @@ class Fases {
       console.log("[vila código: 1]" + "\n" + "[Venda código: 2]" + "\n" + "[Igreja código: 3]" + "\n")
       const LocalParaIr = prompt("Para onde deseja ir, digite o código:")
       if (LocalParaIr === "1"){
-        return this.IrParaVila()
+        return this.IrParaVila(protagonistaA, adversario, adversario2)
       }
       else if (LocalParaIr === "2") {
-         this.irParaVenda(protagonistaA) 
+         this.irParaVenda(protagonistaA, adversario, adversario2) 
       }
       else if(LocalParaIr === "3"){
-        return this.irParaIgreja();
+        return this.irParaIgreja(protagonistaA, adversario, adversario2);
       }
       else{
         console.log("código incorreto, tente novamente !!")
         return LocalParaIr
       }
     }
-      IrParaVila(){
+      IrParaVila(protagonistaA, adversario, adversario2){
         console.log("\n",Vila.nomelocal ,)
         console.log(">>>",Vila.informacoes,"\n")
 
@@ -209,14 +210,30 @@ class Fases {
         console.log(dialogos[16].personagem21 + ":" + dialogos[16].fala21)
         console.log(dialogos[17].personagem22 + ":" + dialogos[17].fala22)
 
-        //outras ações
         
+        this.irParaVenda(protagonistaA, adversario, adversario2)
+
       }
-      irParaCaatinga(){
+      irParaCaatinga(protagonistaA, adversario, adversario2){
+      let perca;
       console.log("\n",Caatinga.nomelocal)
       console.log(">>>",Caatinga.informacoes,"\n")
 
-      //batalhar com o outro bando de cangaceiros armados
+      console.log("narracao: voce encontra os bandido e varios tentam te atacar")
+
+      let vitoria = batalha(protagonistaA, adversario)
+      if(vitoria === true){
+        console.log("narracao: voce escuta sons de cavalo e sabe que é seu bando. aguente!")
+        vitoria = batalha(protagonistaA, adversario2)
+        if(vitoria === true){
+          console.log("narracao seu bando chega e com ajuda deles voce consegue derrotar os bandidos")
+        }else {
+          return perca = true
+        }
+      }else {
+        return perca = true
+      }
+
     
       //mensagem depois da luta 
       console.log(dialogos[18].personagem23 + ":" + dialogos[18].fala23)
@@ -225,7 +242,7 @@ class Fases {
       console.log(dialogos[18].personagem23 + ":" + dialogos[18].fala23)
        
     }
-    irParaVenda(protagonistaA){
+    irParaVenda(protagonistaA, adversario, adversario2){
       console.log("\n",Venda.nomelocal, "\n")
        
     //mecânica para comprar itens (atenção às condições)
@@ -253,14 +270,17 @@ class Fases {
     //mensagem depois de ter comprado oq queria
     console.log("Compra efetuada com sucesso!")
     console.log("Inventario novo:", inventario)
+
+    //diálogos que levam até a Caatinga
+    return this.irParaCaatinga(protagonistaA, adversario, adversario2)
    }
   }
 
-    irParaIgreja(){
+    irParaIgreja(protagonistaA, adversario, adversario2){
       console.log("\n",Igreja.nomelocal,)
       console.log(">>>",Igreja.informacoes,"\n")
 
-      if (inventario.includes("joia")){
+      if (protagonistaA.caixa.receberItem(0)  === "joia"){
         //caso o padre não esteja na igreja
       console.log(dialogos[13].personagem18 + ":" + dialogos[13].fala18)
       } else {
@@ -268,21 +288,19 @@ class Fases {
       console.log(dialogos[11].personagem16 + ":" + dialogos[11].fala16)
       console.log(dialogos[12].personagem17 + ":" + dialogos[12].fala17)
 
-       // ganhar bônus de vida 
+       protagonistaA.vida += 20
+       console.log("voce ganhou 20 de vida")
        // bonus aqui
       }
         // ir para venda para comprar itens
-        //diálogos que levam até a Caatinga
-        return this.irParaCaatinga()
+        this.irParaVenda(protagonistaA, adversario, adversario2)
+
+
     }
 
     missaoConcluida(){
         this.status = "fase 3 concluída"
         fasesconcluidas = 3
-
-      // ganho da fase 3
-      inventario[0] = 1125
-      console.log(inventario)
 
        return this.status
     }
@@ -293,7 +311,7 @@ class Fases {
     constructor(nomeFase, status) {
       super(nomeFase, status);
     }
-    irParaFazendaCoronel(){
+    irParaFazendaCoronel(protagonistaA, adversario){
       console.log(Fazenda2.nomelocal)
       console.log(">>>",Fazenda2.informacoes,"\n")
    //diálogos quando chega na fazenda
@@ -306,6 +324,12 @@ class Fases {
    console.log(dialogos[24].personagem29 + ":" + dialogos[24].fala29)
 
    // batalha com o coronel
+   let vitoria = batalha(protagonistaA, adversario)
+
+    if (vitoria === true){
+      this.missaoConcluida()
+      this.fimDeJogo(true)
+    }
 
     }
 
@@ -319,13 +343,13 @@ class Fases {
       return this.status
     }
 
-    fimDeJogo(){
-      if (fasesconcluidas === 4){
+    fimDeJogo(n){
+      if (n === true){
         // se vencer o coronel tem um final específico (final bom, só a mensagem mesmo)
-        console.log(cenas[7].Descrição + ">>>" + cenas[7].Cena7)
+        console.log("parabens voce ganhou do zerufino e finalizou o nosso jogo demo muito obrigado")
       } else {
         // se perder tem outro final específico (mensagem)
-        console.log(cenas[8].Descrição + ">>>" + cenas[8].Cena8)
+        console.log("infelizmente voce perdeu tente novamente")
       }
     }
   }

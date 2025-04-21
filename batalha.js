@@ -8,6 +8,8 @@ function batalha(personagemA, personagemB) {
     console.log(`A batalha começou entre ${personagemA.nome} e ${personagemB.nome}!
 `);
 
+let vidaInicial = personagemA.vida 
+
 let vitoria
 
     let turno = 1;
@@ -51,6 +53,7 @@ let vitoria
 
         turno++;
     }
+    personagemA.vida += (vidaInicial-personagemA.vida) / 2
 }
 
 

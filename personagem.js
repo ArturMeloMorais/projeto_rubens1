@@ -149,6 +149,8 @@ const volante = new Personagem(
     pistola
 )
 
+let disparo = new Habilidades("disparo", 10, 2)
+
 
 const bandidoscidade = new Personagem(
     personagens[3].nome,
@@ -156,9 +158,26 @@ const bandidoscidade = new Personagem(
     personagens[3].vida,
     personagens[3].armadura,
     personagens[3].velocidade,
-    personagens[3].dinheiro
+    personagens[3].dinheiro,
+    disparo,
+    faca
    
 )
+
+const bandidoscidade2 = new Personagem(
+    personagens[3].nome,
+    personagens[3].ocupacao,
+    personagens[3].vida,
+    personagens[3].armadura,
+    personagens[3].velocidade,
+    personagens[3].dinheiro,
+    disparo,
+    faca
+   
+)
+
+let escopeta = new Habilidades("escopeta", 15, 5)
+let facao = new Habilidades("facao", 14, 4)
 
 
 const zerufino = new Personagem(
@@ -167,10 +186,12 @@ const zerufino = new Personagem(
     personagens[4].vida,
     personagens[4].armadura,
     personagens[4].velocidade,
-    personagens[4].dinheiro
+    personagens[4].dinheiro,
+    escopeta,
+    facao
  
 )
 
 //o atributo de velocidade é usado na mecânica de fuga, que no projeto atual não é usado.
 
-module.exports = { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira, volante, bandidoscidade, zerufino };
+module.exports = { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira, volante, bandidoscidade,bandidoscidade2, zerufino };

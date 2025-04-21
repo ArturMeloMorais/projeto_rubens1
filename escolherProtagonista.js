@@ -3,12 +3,12 @@ const { Protagonista } = require("./protagonista.js");
 const { Habilidades, CaixaItens } = require("./arsenal.js");
 
 // HABILIDADES
-const pistola = new Habilidades("pistola", 15, 2);
-const espingarda = new Habilidades("espingarda", 20, 6);
-const soco = new Habilidades("soco", 8 , 2);
-const peixera = new Habilidades("peixeira", 15, 4);
+const pistola = new Habilidades("pistola", 20, 2);
+const espingarda = new Habilidades("espingarda", 30, 6);
+const soco = new Habilidades("soco", 15 , 2);
+const peixera = new Habilidades("peixeira", 30, 4);
 const padinCico = new Habilidades("em nome de padin ciço", 60, 10);
-const penitencia = new Habilidades("penitencia", 20, 4);
+const penitencia = new Habilidades("penitencia", 40, 4);
 
 // CAIXA DE ITENS
 const caixa = new CaixaItens();
@@ -25,11 +25,11 @@ function escolherProta(nomeJogador){
     let jogador = null;
 
     if(escolherOcupacao === "1"){
-        jogador = new Protagonista(nomeJogador, "atirador", 80, 2, 10, 50, pistola, espingarda, 10, caixa);
+        jogador = new Protagonista(nomeJogador, "atirador", 120, 5, 10, 50, pistola, espingarda, 10, caixa);
     } else if (escolherOcupacao === "2"){
-        jogador = new Protagonista(nomeJogador, "cabra da pexte", 120, 7, 4, 50, soco, peixera, 10, caixa);
+        jogador = new Protagonista(nomeJogador, "cabra da pexte", 160, 10, 4, 50, soco, peixera, 10, caixa);
     } else if(escolherOcupacao === "3"){
-        jogador = new Protagonista(nomeJogador, "espiritualista", 80, 0, 2, 50, padinCico, penitencia, 10, caixa);
+        jogador = new Protagonista(nomeJogador, "espiritualista", 120, 7, 2, 50, padinCico, penitencia, 10, caixa);
     } else {
         console.log("Número errado, tente novamente.");
         return escolherProta(nomeJogador);

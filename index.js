@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { Habilidades, CaixaItens } = require("./arsenal.js");
-const { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira,volante } = require("./personagem.js");
+const { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira,volante,bandidoscidade,bandidoscidade2,zerufino } = require("./personagem.js");
 const { batalha } = require("./batalha.js");
 const { Protagonista } = require("./protagonista.js");
 const { fugir } = require("./fuga.js");
@@ -19,23 +19,27 @@ function inicar() {
     console.log(_tutorial.mostrarTutorial);
     _tutorial.iniciarTutorial(jogador, lampiao);
 
-    console.log("\n");*/
+    console.log("\n");
 
-    /*const _fase1 = new Fase1(fase1, "não concluída")
+    const _fase1 = new Fase1(fase1, "não concluída")
     console.table(_fase1.mostrarfase1)
     _fase1.missaoDaJoia(jogador, francisctexeira)
-    console.log("\n")*/
+    console.log("\n")
 
-    /*const _fase2 = new Fase2(fase2, "não concluída")
+    const _fase2 = new Fase2(fase2, "não concluída")
     console.table(_fase2.mostrarfase2)
     _fase2.missaoResgate(jogador, volante)
-    console.log("\n")*/
+    console.log("\n")
 
     const _fase3 = new Fase3(fase3, "não concluída")
     console.table(_fase3.mostrarfase3)
-    jogador.caixa.mudarItem(0, "joia")
-    _fase3.irParaCidade(jogador, volante)
-    console.log("\n")
+    _fase3.irParaCidade(jogador, bandidoscidade, bandidoscidade2)
+    console.log("\n")*/
+
+    const _fase4 = new Fase4 (fase4, "não concluída")
+    console.table(_fase4.mostrarfase4)
+    _fase4.irParaFazendaCoronel(jogador, zerufino)
+    _fase4.fimDeJogo
 }
 
 inicar();

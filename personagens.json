@@ -32,19 +32,19 @@
     {
       "nome": "Bandidos da Cidade",
       "ocupacao": "Invasores",
-      "vida": 100,
-      "armadura": 4,
-      "velocidade": 18,
-      "dinheiro": 1000
+      "vida": 30,
+      "armadura": 2,
+      "velocidade": 7,
+      "dinheiro": 400
     },
 
 
     {
       "nome": "Coronel Zé Rufino",
       "ocupacao": "Coronel militarizado",
-      "vida": 200,
-      "armadura": 6,
-      "velocidade": 20,
+      "vida": 100,
+      "armadura": 4,
+      "velocidade": 10,
       "dinheiro": 9999
     }
 
