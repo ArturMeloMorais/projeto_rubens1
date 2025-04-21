@@ -7,7 +7,8 @@ const prompt = require("prompt-sync")()
 const { batalha } = require("./batalha.js");
 const { Protagonista } = require("./protagonista.js");
 const { Habilidades, CaixaItens } = require("./arsenal.js");
-const { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira } = require("./personagem.js");
+const { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira,volante } = require("./personagem.js");
+const { fugir } = require("./fuga.js");
 
 
 const tutorial = cenas[1].Cena2
@@ -45,7 +46,7 @@ class Fases {
     }
   
     get mostrarfase2() {
-      return `[${_fase2.#nomeFase}] \n`
+      return `[${this.#nomeFase}] \n`
     }
   
     get mostrarfase3() {
@@ -111,8 +112,7 @@ class Fases {
       const vitoria = batalha(protagonistaA, adversario);
       console.log("\n")
       if(vitoria === true){
-        protagonistaA.caixa = protagonistaA.caixa || [];
-        protagonistaA.caixa[0] = "joia";
+        protagonistaA.caixa.mudarItem(0,"joia")
       } else {
         return perca = true
       }
@@ -124,7 +124,7 @@ class Fases {
       if(decisao === "f"){
         console.log(`narracao: ${protagonistaA.nome} diz para ${dialogos[1].personagem4} que infelizmente nao coseguiu achar a joia`)
       }else {
-        protagonistaA.caixa[0] = "terço"
+        protagonistaA.caixa.mudarItem(0,"terço")
         console.log(`narracao: voce devovel a joia para ${dialogos[1].personagem4} que chorrra de felicidade e lhe da um terço para o proteger`)
       }
     }
@@ -146,26 +146,43 @@ class Fases {
       super(nomeFase);
       this.#status = status
     }
-    missaoResgate(){
-      console.log(Delegacia.nomelocal,"\n")
-      console.log(">>>",Delegacia.informacoes)
-      console.log("\n",dialogos[5].personagem10 + ": " + dialogos[5].fala10)
-      console.log(dialogos[6].personagem11 + ": " + dialogos[6].fala11)
-       // batalha com o policial da cadeia
-      console.log("\n",dialogos[7].personagem12 + ": " + dialogos[7].fala12)
-      console.log(dialogos[8].personagem13 + ": " + dialogos[8].fala13,"\n")
-    }
-    missaoConcluida(){
+    missaoConcluida(protagonistaA){
       this.#status = "fase 2 concluída"
       fasesconcluidas = 2
       
       // ganho da fase 2
-      inventario[0] = 125
+      protagonistaA.dinheiro += 125
       console.log(inventario)
 
       return this.#status
     }
-  }
+  
+    missaoResgate(protagonistaA, adversario){
+      let perca;
+      console.log(Delegacia.nomelocal,"\n")
+      console.log(">>>",Delegacia.informacoes)
+      console.log("\n",dialogos[5].personagem10 + ": " + dialogos[5].fala10)
+      console.log(dialogos[6].personagem11 + ": " + dialogos[6].fala11)
+      console.log(volante.nome, ": ", "maldito oque oce ta fazendo")
+
+// batalha com o policial da cadeia
+      let vitoria = batalha(protagonistaA, adversario)
+      if(vitoria === true){
+        console.log("\n", "narracao: Após a sua luta, você consegue libertar o Batoré. Ele está meio cambaleando, com os braços marcados pelas correntes, mas sorri com alívio ao ver você.")
+        console.log("Achei que não ia sair vivo dessa... — ele diz, enquanto vocês correm pelos corredores da prisão. Mas não dá tempo de comemorar.")
+        console.log("Você escuta passos apressados atrás de vocês — guardas! Muitos. E eles não parecem felizes.","\n"," Sem pensar duas vezes, você puxa Batoré pela manga:","\n","— Corre, mano!")
+      fugir(protagonistaA, adversario)
+      console.log("batoré: Mano... a gente conseguiu... a gente conseguiu!")
+      console.log("naracao: apos essa fuga voce e batoré escapam")
+      }else {return perca = true} 
+
+
+       
+      console.log("\n",dialogos[7].personagem12 + ": " + dialogos[7].fala12)
+      console.log(dialogos[8].personagem13 + ": " + dialogos[8].fala13,"\n")
+      this.missaoConcluida(protagonistaA)
+    }
+    }
   
   class Fase3 extends Fases {
     constructor(nomeFase, status) {

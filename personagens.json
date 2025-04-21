@@ -22,9 +22,9 @@
     {
       "nome": "Volante",
       "ocupacao": "Policiais do sertão",
-      "vida": 90,
-      "armadura": 5,
-      "velocidade": 14,
+      "vida": 50,
+      "armadura": 4,
+      "velocidade": 7,
       "dinheiro": 75
     },
 

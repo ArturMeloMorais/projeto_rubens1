@@ -144,7 +144,9 @@ const volante = new Personagem(
     personagens[2].vida,
     personagens[2].armadura,
     personagens[2].velocidade,
-    personagens[2].dinheiro
+    personagens[2].dinheiro,
+    faca,
+    pistola
 )
 
 

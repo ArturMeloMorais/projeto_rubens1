@@ -12,6 +12,10 @@ const penitencia = new Habilidades("penitencia", 20, 4);
 
 // CAIXA DE ITENS
 const caixa = new CaixaItens();
+caixa.adicionarItem(0) 
+caixa.adicionarItem("cantil de água")
+caixa.adicionarItem( "pistola velha")
+caixa.adicionarItem( "faca enferrujada")
 
 function escolherProta(nomeJogador){
     console.log("-------------------------------------")
