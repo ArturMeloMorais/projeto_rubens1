@@ -39,22 +39,28 @@ class Fases {
       this.#status = status
     }
     get mostrarTutorial() {
-      return `[${this.#nomeFase}] \n`
+      return `\n [${this.#nomeFase}] \n`
     }
     get mostrarfase1() {
-      return `[${this.#nomeFase}] \n`
+      return `\n [${this.#nomeFase}] \n`
     }
   
     get mostrarfase2() {
       return `[${this.#nomeFase}] \n`
+
     }
   
     get mostrarfase3() {
-      return `[${_fase3.#nomeFase}] \n`
+      return `\n [${_fase3.#nomeFase}] \n`
     }
   
     get mostrarfase4() {
-      return `[${_fase4.#nomeFase}] \n`
+      return `\n [${_fase4.#nomeFase}] \n`
+    }
+
+    missaoConcluida() {
+      this.status = console.log(`Fase concluída!`)
+      return this.status
     }
   }
   
@@ -68,29 +74,22 @@ class Fases {
     console.log(dialogos[0].personagem2 + ": " + dialogos[0].fala2)
     console.log(dialogos[0].personagem3 + ": " + dialogos[0].fala3, "\n")
     const começar_tutorial = prompt(">>> Aperte na tecla C e dê enter:")
-    if(começar_tutorial === "C" || começar_tutorial === "c"){
+    if(começar_tutorial === "C" || começar_tutorial === "c") {
       console.log("Iniciando ... \n")
       const vitoria = batalha(protagonistaA, adversario);
+
       if(vitoria === true){
-        console.log(lampiao.nome, ": ", "voce é o mais forte")
-     } else {
-      console.log(lampiao.nome, ": ", "estou impressionado")
-      protagonistaA.vida = armazenarVida
-     }
       console.log(dialogos[2].personagem7 + ": " + dialogos[2].fala7)
-      this.tutorialConcluido()
+      this.missaoConcluida()
     }
-    else{
+
+    else {
       console.log("Tecla incorreta")
       return começar_tutorial
     }
- 
   }
-  tutorialConcluido(){
-    this.status = "tutorial concluído"
-  }
+}}
 
-  }
   class Fase1 extends Fases {
     constructor(nomeFase, status) {
       super(nomeFase,status);
@@ -106,9 +105,9 @@ class Fases {
 
       console.log("\n",dialogos[3].personagem8 + ": " + dialogos[3].fala8)
       console.log("\n")
-      console.log(`${francisctexeira.nome}: quem é voçe?`)
-      console.log(`${protagonistaA.nome}: eu vim aqui para resgatar a joia que voce roubou`)
-      console.log("Narracao: coronel texeira atira sabendo suas intecoes")
+      console.log(`${francisctexeira.nome}: quem é você?`)
+      console.log(`${protagonistaA.nome}: eu vim aqui para resgatar a jóia que voce roubou`)
+      console.log("Narracao: Coronel Texeira atira sabendo suas intenções")
       const vitoria = batalha(protagonistaA, adversario);
       console.log("\n")
       if(vitoria === true){
@@ -120,26 +119,17 @@ class Fases {
       
       console.log("\n",dialogos[4].personagem9 + ": " + dialogos[4].fala9)
        //mecânica para escolher ficar ou não com a jóia
-      let decisao = prompt("<<<<<<<<<< Aperte f para ficar com a joia ou qualquer outra tecla para devolver >>>>>>>>>>>: ")
+      let decisao = prompt("<<<<<<<<<< Aperte f para ficar com a jóia ou qualquer outra tecla para devolver >>>>>>>>>>>: ")
       if(decisao === "f"){
-        console.log(`narracao: ${protagonistaA.nome} diz para ${dialogos[1].personagem4} que infelizmente nao coseguiu achar a joia`)
+        console.log(`Narração: ${protagonistaA.nome} diz para ${dialogos[1].personagem4} que infelizmente nao conseguiu achar a joia`)
       }else {
         protagonistaA.caixa.mudarItem(0,"terço")
         console.log(`narracao: voce devovel a joia para ${dialogos[1].personagem4} que chorrra de felicidade e lhe da um terço para o proteger`)
-      }
-    }
-    missaoConcluida(){
-       this.status = "fase 1 concluída"
-       fasesconcluidas = 1
 
-       // ganho da fase 1
-       inventario[0] = 50
-       console.log(inventario)
-       
-       return this.status
     }
-  }
+   
   
+}}
   class Fase2 extends Fases {
     #status
     constructor(nomeFase, status) {

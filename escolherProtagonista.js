@@ -4,7 +4,7 @@ const { Habilidades, CaixaItens } = require("./arsenal.js");
 
 // HABILIDADES
 const pistola = new Habilidades("pistola", 15, 2);
-const espingarda = new Habilidades("espingarda", 35, 6);
+const espingarda = new Habilidades("espingarda", 20, 6);
 const soco = new Habilidades("soco", 8 , 2);
 const peixera = new Habilidades("peixeira", 15, 4);
 const padinCico = new Habilidades("em nome de padin ciço", 60, 10);

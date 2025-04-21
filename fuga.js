@@ -1,3 +1,5 @@
+//aqui tem a mecânica de fuga, que ainda não foi implementada.
+
 const {Personagem, gerarNumeroAleatorio0_20 } = require("./personagem.js"); 
 const {Habilidades, CaixaItens } = require("./arsenal.js");
 const prompt = require('prompt-sync')();
