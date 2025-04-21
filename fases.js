@@ -12,6 +12,19 @@ const fase3 = cenas[4].Cena5
 const fase4 = cenas[5].Cena6
 const fimjogo = cenas[6].Cena7
 
+// inventario
+let inventario = [0, "cantil de água", "pistola velha", "faca enferrujada"]
+
+// venda
+let VendaLoja = {
+  nomelocal: "----- Mercearia Secos e Molhados -----",
+  Itens: ["Água ardente", "Curativos", "Munição", "Parabelo", "Colete", "Anéis do sertão", "Carne de sol"]
+}
+
+// fases concluidas
+let fasesconcluidas = 0
+
+
 class Fases {
     #nomeFase;
     #status;
@@ -82,10 +95,24 @@ class Fases {
        // batalhar com o vilão sobrenatural
 
       console.log("\n",dialogos[4].personagem9 + ": " + dialogos[4].fala9)
-       //mecânica para escolher ficar ou não com a jóia
+      let joia = prompt("Ficar com a joia '1'. Devolver a joia '2'.")
+      if (joia === "1"){
+        inventario.push("joia")
+        console.log("Joia adicionado no inventário!")
+        console.log(inventario)
+      } else {
+        console.log("Você devolveu a joia para Maria Rendeira.")
+      }
+
     }
     missaoConcluida(){
        this.status = "fase 1 concluída"
+       fasesconcluidas = 1
+
+       // ganho da fase 1
+       inventario[0] = 50
+       console.log(inventario)
+
        return this.status
     }
   }
@@ -107,6 +134,12 @@ class Fases {
     }
     missaoConcluida(){
       this.#status = "fase 2 concluída"
+      fasesconcluidas = 2
+
+      // ganho da fase 2
+      inventario[0] = 125
+      console.log(inventario)
+
       return this.#status
     }
   }
@@ -136,75 +169,147 @@ class Fases {
         return LocalParaIr
       }
     }
+
       IrParaVila(){
         console.log("\n",Vila.nomelocal ,)
         console.log(">>>",Vila.informacoes,"\n")
+
         //diálogos vila
+        console.log(dialogos[14].personagem19 + ":" + dialogos[14].fala19)
+        console.log(dialogos[15].personagem20 + ":" + dialogos[15].fala20)
+        console.log(dialogos[16].personagem21 + ":" + dialogos[16].fala21)
+        console.log(dialogos[17].personagem22 + ":" + dialogos[17].fala22)
+
+        // batalha contra os bandidos da cidade
         //outras ações
         
       }
+
       irParaCaatinga(){
       console.log("\n",Caatinga.nomelocal)
       console.log(">>>",Caatinga.informacoes,"\n")
       //batalhar com o outro bando de cangaceiros armados
+
       //mensagem depois da luta 
+      console.log(dialogos[18].personagem23 + ":" + dialogos[18].fala23)
+      console.log(dialogos[19].personagem24 + ":" + dialogos[19].fala24)
+
       //mensagem para ir pra fase 4
+      console.log(dialogos[18].personagem23 + ":" + dialogos[18].fala23)
        
     }
+
     irParaVenda(){
       console.log("\n",Venda.nomelocal, "\n")
-      //itens disponíveis
-     //mecânica para comprar itens (atenção às condições)
-     
-     // se tiver ficado com a joia na fase 1 compra todos os itens da venda
-      // se não ganha a arma e tem direito a comprar somente 3 itens 
-
-   //mensagem depois de ter comprado oq queria
       
+    //mecânica para comprar itens (atenção às condições)
+    // se tiver a joia
+  if (inventario.includes("joia")){
+    console.log("Voce tem a joia! Pode pegar todos os itens da venda")
+    for (let item of VendaLoja.Itens){
+      if (!inventario.includes(item)){
+        inventario.push(item)
+      }
     }
+  } else {
+    console.log("Você não possui a joia! Você ganhou um Parabelo e só tem dinheiro para 3 itens básicos")
+
+    let itensFixos = ["Parabelo", "Água ardente", "Munição", "Curativos"]
+    itensFixos.forEach(item => {
+      if (!inventario.includes(item)) {
+        inventario.push(item)
+      }
+    })
+  
+    // se tiver ficado com a joia na fase 1 compra todos os itens da venda
+    // se não ganha a arma e tem direito a comprar somente 3 itens 
+
+    //mensagem depois de ter comprado oq queria
+    console.log("Compra efetuada com sucesso!")
+    console.log("Inventario novo:", inventario)
+      
+  }
+  }
+
+
     irParaIgreja(){
       console.log("\n",Igreja.nomelocal,)
       console.log(">>>",Igreja.informacoes,"\n")
 
+      if (inventario.includes("joia")){
+        //caso o padre não esteja na igreja
+      console.log(dialogos[13].personagem18 + ":" + dialogos[13].fala18)
+      } else {
+        //caso o padre esteja na igreja
+      console.log(dialogos[11].personagem16 + ":" + dialogos[11].fala16)
+      console.log(dialogos[12].personagem17 + ":" + dialogos[12].fala17)
 
-      //caso o padre esteja na igreja
-      console.log(dialogos[11].personagem16 + ": " + dialogos[11].fala16)
        // ganhar bônus de vida 
-       console.log(dialogos[12].personagem17 + ": " + dialogos[12].fala17)
-
-      //aso o padre não esteja na igreja
-      console.log(dialogos[13].personagem18 + ": " + dialogos[13].fala18)
-
-       // ir para venda para comprar itens
-       
-       console.log(dialogos[14].personagem19 + ": " + dialogos[14].fala19)
+       // bonus aqui
+      }
+        // ir para venda para comprar itens
         //diálogos que levam até a Caatinga
         return this.irParaCaatinga()
     }
+    
     missaoConcluida(){
-        this.status = "fase 3 concluída"
-       return this.status
+      this.status = "fase 3 concluída"
+      fasesconcluidas = 3
+  
+      // ganho da fase 3
+      inventario[0] = 1125
+      console.log(inventario)
+  
+      return this.status
     }
   }
+
   
   class Fase4 extends Fases {
     
     constructor(nomeFase, status) {
       super(nomeFase, status);
     }
+
     irParaFazendaCoronel(){
       console.log(Fazenda2.nomelocal)
       console.log(">>>",Fazenda2.informacoes,"\n")
+
       //diálogos quando chega na fazenda
+      console.log(dialogos[20].personagem25 + ":" + dialogos[20].fala25)
+      console.log(dialogos[21].personagem26 + ":" + dialogos[21].fala26)
+
       //diálogo frio com o coronel 
+      console.log(dialogos[22].personagem27 + ":" + dialogos[22].fala27)
+      console.log(dialogos[23].personagem28 + ":" + dialogos[23].fala28)
+      console.log(dialogos[24].personagem29 + ":" + dialogos[24].fala29)
+
       // batalha com o coronel
-      
+
     }
+
+    // finalizando a fase 4
+    missaoConcluida(){
+      this.status = "fase 4 concluída"
+      fasesconcluidas = 4
+      // ganho da fase 4
+      inventario[0] = 9999
+      console.log(inventario)
+      return this.status
+    }
+  
     fimDeJogo(){
-      // se vencer o coronel tem um final específico (final bom, só a mensagem mesmo)
-      // se perder tem outro final específico (mensagem)
+      if (fasesconcluidas === 4){
+        // se vencer o coronel tem um final específico (final bom, só a mensagem mesmo)
+        console.log(cenas[7].Descrição + ">>>" + cenas[7].Cena7)
+      } else {
+        // se perder tem outro final específico (mensagem)
+        console.log(cenas[8].Descrição + ">>>" + cenas[8].Cena8)
+      }
     }
   }
+
+
   module.exports = {Fases, Tutorial, Fase1, Fase2, Fase3, Fase4}
  
  console.log("BEM VINDO AO JOGO DO CANGAÇO!! \n")

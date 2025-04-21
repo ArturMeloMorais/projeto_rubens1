@@ -22,12 +22,17 @@
     },
     {
       "Descrição": "Missão da . Ganho de:  Mil cruzados novos",
-      "Ganho": "1000",
+      "Ganho": "9999",
       "Cena6": "FASE 4 - FAZENDA DO CORONEL ZÉ RUFINO"
     },
     {
       "Descrição": "Jogo zerado. Você recebeu o título de 'Rei do Cangaço'",
       "Ganho": "Rei do cangaço",
       "Cena7": "FIM DE JOGO"
+    },
+    {
+      "Descrição": "Game over. Você não conseguiu vencer o coronel Zé Rufino, perdeu tudo e virou lembrança no sertão.",
+      "Ganho": "Nenhum",
+      "Cena8": "FIM DE JOGO"
     }
   ]

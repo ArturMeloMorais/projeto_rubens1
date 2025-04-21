@@ -110,8 +110,6 @@ function gerarNumeroAleatorio0_20() {
 
 const pistola = new Habilidades("pistola", 15, 2);
 const tiroduplo = new Habilidades("tiro duplo de escopeta", 50, 2)
-const sombra = new Habilidades('Sombra', 8, 2)
-const medo = new Habilidades('Medo', 20, 6)
 
 const lampiao = new Personagem(
     personagens[0].nome,
@@ -125,7 +123,8 @@ const lampiao = new Personagem(
 )
 
 
-
+const faca = new Habilidades("faca", 12, 7)
+const chute = new Habilidades("chute",10, 7 )
 
 const francisctexeira = new Personagem(
     personagens[1].nome,
@@ -134,8 +133,8 @@ const francisctexeira = new Personagem(
     personagens[1].armadura,
     personagens[1].velocidade,
     personagens[1].dinheiro,
-    sombra,
-    medo
+    faca,
+    chute
 )
 
 
