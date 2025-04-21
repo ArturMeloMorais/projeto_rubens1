@@ -42,6 +42,11 @@ class Fases {
     get mostrarfase4() {
       return `[${_fase4.#nomeFase}] \n`
     }
+
+    missaoConcluida() {
+      this.status = console.log(`Fase concluída!`)
+      return this.status
+    }
   }
   
   class Tutorial extends Fases{
@@ -54,29 +59,22 @@ class Fases {
     console.log(dialogos[0].personagem2 + ": " + dialogos[0].fala2)
     console.log(dialogos[0].personagem3 + ": " + dialogos[0].fala3, "\n")
     const começar_tutorial = prompt(">>> Aperte na tecla C e dê enter:")
-    if(começar_tutorial === "C" || começar_tutorial === "c"){
+    if(começar_tutorial === "C" || começar_tutorial === "c") {
       console.log("Iniciando ... \n")
       const vitoria = batalha(protagonistaA, adversario);
+
       if(vitoria === true){
-        console.log(lampiao.nome, ": ", "voce é o mais forte")
-     } else {
-      console.log(lampiao.nome, ": ", "estou impressionado")
-      protagonistaA.vida = armazenarVida
-     }
       console.log(dialogos[2].personagem7 + ": " + dialogos[2].fala7)
-      this.tutorialConcluido()
+      this.missaoConcluida()
     }
-    else{
+
+    else {
       console.log("Tecla incorreta")
       return começar_tutorial
     }
- 
   }
-  tutorialConcluido(){
-    this.status = "tutorial concluído"
-  }
+}}
 
-  }
   class Fase1 extends Fases {
     constructor(nomeFase, status) {
       super(nomeFase,status);
@@ -100,6 +98,7 @@ class Fases {
       if(vitoria === true){
         protagonistaA.caixa = protagonistaA.caixa || [];
         protagonistaA.caixa[0] = "joia";
+        this.missaoConcluida()
       } else {
         return perca = true
       }
@@ -109,17 +108,14 @@ class Fases {
        //mecânica para escolher ficar ou não com a jóia
       let decisao = prompt("<<<<<<<<<< Aperte f para ficar com a joia ou qualquer outra tecla para devolver >>>>>>>>>>>: ")
       if(decisao === "f"){
-        console.log(`narracao: ${protagonistaA.nome} diz para ${dialogos[1].personagem4} que infelizmente nao coseguiu achar a joia`)
+        console.log(`narracao: ${protagonistaA.nome} diz para ${dialogos[1].personagem4} que infelizmente nao conseguiu achar a joia`)
       }else {
         protagonistaA.caixa[0] = "terço"
-        console.log(`narracao: voce devovel a joia para ${dialogos[1].personagem4} que chorrra de felicidade e lhe da um terço para o proteger`)
+        console.log(`narracao: voce devolveu a joia para ${dialogos[1].personagem4} que chora de felicidade e lhe da um terço para o proteger`)
       }
     }
-    missaoConcluida(){
-       this.status = "fase 1 concluída"
-       return this.status
     }
-  }
+  
   
   class Fase2 extends Fases {
     #status

@@ -169,5 +169,6 @@ const zerufino = new Personagem(
  
 )
 
+//o atributo de velocidade é usado na mecânica de fuga, que no projeto atual não é usado.
 
 module.exports = { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira, volante, bandidoscidade, zerufino };

@@ -7,7 +7,7 @@ const prompt = require('prompt-sync')
 
 function testarBatalha () {
     try {
-        let protagonista = escolherProta("Minirubens", 'atirador', 80, 2, 10, pistola, espingarda)
+        let protagonista = escolherProta("Minirubens")
         let inimigo = francisctexeira
         batalha(protagonista, inimigo)
     } catch (error) {

@@ -50,6 +50,11 @@ class Fases {
     get mostrarfase4() {
       return `[${_fase4.#nomeFase}] \n`
     }
+
+    missaoConcluida() {
+      this.status = console.log('Fase concluída!')
+      return this.status
+    }
   }
   
   class Tutorial extends Fases{
@@ -70,10 +75,6 @@ class Fases {
     }
     console.log(dialogos[2].personagem7 + ": " + dialogos[2].fala7)
     this.tutorialConcluido()
-  }
-  tutorialConcluido(){
-    this.status = "tutorial concluído"
-    return this.status
   }
 
   }
