@@ -6,7 +6,7 @@ const { Protagonista } = require("./protagonista.js");
 const { fugir } = require("./fuga.js");
 const prompt = require('prompt-sync')();
 const { escolherProta } = require("./escolherProtagonista.js");
-const { Fases, Tutorial, Fase1, Fase2, Fase3, Fase4,tutorial, fase1, fase2, fase3, fase4, fimjogo  } = require("./frases.js");
+const { Fases, Tutorial, Fase1, Fase2, Fase3, Fase4, tutorial, fase1, fase2, fase3, fase4, fimjogo  } = require("./frases.js");
 
 function inicar() {
     console.log("BEM VINDO AO JOGO DO CANGAÇO!! \n");
@@ -26,9 +26,15 @@ function inicar() {
     _fase1.missaoDaJoia(jogador, francisctexeira)
     console.log("\n")*/
 
-    const _fase2 = new Fase2(fase2, "não concluída")
+    /*const _fase2 = new Fase2(fase2, "não concluída")
     console.table(_fase2.mostrarfase2)
     _fase2.missaoResgate(jogador, volante)
+    console.log("\n")*/
+
+    const _fase3 = new Fase3(fase3, "não concluída")
+    console.table(_fase3.mostrarfase3)
+    jogador.caixa.mudarItem(0, "joia")
+    _fase3.irParaCidade(jogador, volante)
     console.log("\n")
 }
 

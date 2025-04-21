@@ -51,11 +51,11 @@ class Fases {
     }
   
     get mostrarfase3() {
-      return `\n [${_fase3.#nomeFase}] \n`
+    return `\n [${this.#nomeFase}] \n`
     }
   
     get mostrarfase4() {
-      return `\n [${_fase4.#nomeFase}] \n`
+    return `\n [${this.#nomeFase}] \n`
     }
 
     missaoConcluida() {
@@ -178,7 +178,7 @@ class Fases {
     constructor(nomeFase, status) {
       super(nomeFase, status);
     }
-    irParaCidade(){
+    irParaCidade(protagonistaA, adversario){
       console.log(Cidade.nomelocal,"\n")
       console.log(">>>",Cidade.informacoes)
 
@@ -189,7 +189,7 @@ class Fases {
         return this.IrParaVila()
       }
       else if (LocalParaIr === "2") {
-         this.irParaVenda() 
+         this.irParaVenda(protagonistaA) 
       }
       else if(LocalParaIr === "3"){
         return this.irParaIgreja();
@@ -225,12 +225,12 @@ class Fases {
       console.log(dialogos[18].personagem23 + ":" + dialogos[18].fala23)
        
     }
-    irParaVenda(){
+    irParaVenda(protagonistaA){
       console.log("\n",Venda.nomelocal, "\n")
        
     //mecânica para comprar itens (atenção às condições)
     // se tiver a joia
-  if (inventario.includes("joia")){
+  if (protagonistaA.caixa.receberItem(0) === "joia"){
     console.log("Voce tem a joia! Pode pegar todos os itens da venda")
     for (let item of VendaLoja.Itens){
       if (!inventario.includes(item)){

@@ -25,6 +25,9 @@ class Protagonista extends Personagem {
         this.#habilidade1 = habilidade1;
         this.#habilidade2 = habilidade2;
     }
+    get caixa() {
+        return this.#caixaItens;
+    }
 
     get dinheiro() {
         return this.#dinheiro;
