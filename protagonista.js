@@ -69,7 +69,7 @@ class Protagonista extends Personagem {
 
     set dinheiro(novoDinheiro){
         if (novoDinheiro < 0){
-            console.log("trasacao invalida, dinheiro insuficiente")
+            console.log("transacao invalida, dinheiro insuficiente")
         } else{
             this.#dinheiro = novoDinheiro
         }}

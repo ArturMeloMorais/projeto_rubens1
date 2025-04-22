@@ -23,7 +23,7 @@ const { Fases, Tutorial, Fase1, Fase2, Fase3, Fase4 } = require("./frases.js");
 
 // escolherProta()
 
-function testarBatalha () {
+/* function testarBatalha () {
       try {
           let protagonista = escolherProta("Minirubens")
           let inimigo = francisctexeira
@@ -31,8 +31,28 @@ function testarBatalha () {
       } catch (error) {
           console.error('Erro em batalha', error.message)
       } finally {
-          console.log('Executado.')
+          console.log('Executado - Batalha')
       }
   }
   
   testarBatalha()
+
+  function testarFuga () {
+    try {
+        let protagonista = escolherProta('Minirubens')
+        let inimigo = bandidoscidade
+        fugir(protagonista, inimigo)
+    } catch (error) {
+        console.error = ('Erro em fuga', error.message)
+    } finally {
+        console.log('Executado - Fuga')
+    }
+  }
+
+  testarFuga() */
+
+  function testarInventario () {
+
+  }
+
+  console.assert
