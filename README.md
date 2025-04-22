@@ -40,7 +40,7 @@ Github: https://github.com/d4marys
 
 - Esther Menezes
   
-Github:
+Github: https://github.com/ainopea
 
 - Ketlyn Barbosa
   
