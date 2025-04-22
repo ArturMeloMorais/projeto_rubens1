@@ -14,7 +14,7 @@ function inicar() {
     let nomeJ = prompt("Digite seu nome de personagem: ");
     let jogador = escolherProta(nomeJ);
 
-    /*const _tutorial = new Tutorial(tutorial, "não concluído");
+    const _tutorial = new Tutorial(tutorial, "não concluído");
 
     console.log(_tutorial.mostrarTutorial);
     _tutorial.iniciarTutorial(jogador, lampiao);
@@ -34,7 +34,7 @@ function inicar() {
     const _fase3 = new Fase3(fase3, "não concluída")
     console.table(_fase3.mostrarfase3)
     _fase3.irParaCidade(jogador, bandidoscidade, bandidoscidade2)
-    console.log("\n")*/
+    console.log("\n")
 
     const _fase4 = new Fase4 (fase4, "não concluída")
     console.table(_fase4.mostrarfase4)

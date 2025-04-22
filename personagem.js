@@ -108,8 +108,8 @@ function gerarNumeroAleatorio0_20() {
 
 // criar personagens com json
 
-const pistola = new Habilidades("pistola", 15, 2);
-const tiroduplo = new Habilidades("tiro duplo de escopeta", 50, 2)
+const pistola = new Habilidades("pistola", 7, 2);
+const tiroduplo = new Habilidades("tiro duplo de escopeta", 30, 7)
 
 const lampiao = new Personagem(
     personagens[0].nome,

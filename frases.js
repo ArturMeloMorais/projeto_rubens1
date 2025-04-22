@@ -58,10 +58,19 @@ class Fases {
     return `\n [${this.#nomeFase}] \n`
     }
 
+    get mostrarStatusFase() {
+      return this.#status
+    }
+
     missaoConcluida() {
       this.status = console.log(`Fase concluída!`)
       return this.status
     }
+
+    curaFinal(protagonista) {
+      protagonista.aumentarVida(40)
+      console.log(`Vida após batalha: ${protagonista.vida}`)
+      }
   }
   
   class Tutorial extends Fases{
@@ -81,6 +90,7 @@ class Fases {
       if(vitoria === true){
       console.log(dialogos[2].personagem7 + ": " + dialogos[2].fala7)
       this.missaoConcluida()
+      this.curaFinal(protagonistaA)
     }
 
     else {
@@ -112,6 +122,7 @@ class Fases {
       console.log("\n")
       if(vitoria === true){
         protagonistaA.caixa.mudarItem(0,"joia")
+        this.curaFinal(protagonistaA)
       } else {
         return perca = true
       }
@@ -346,10 +357,10 @@ class Fases {
     fimDeJogo(n){
       if (n === true){
         // se vencer o coronel tem um final específico (final bom, só a mensagem mesmo)
-        console.log("parabens voce ganhou do zerufino e finalizou o nosso jogo demo muito obrigado")
+        console.log("Obrigado por jogar!")
       } else {
         // se perder tem outro final específico (mensagem)
-        console.log("infelizmente voce perdeu tente novamente")
+        console.log("")
       }
     }
   }

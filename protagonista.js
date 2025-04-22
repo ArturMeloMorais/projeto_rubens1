@@ -37,6 +37,10 @@ class Protagonista extends Personagem {
         return this.#reputacao;
     }
 
+    get vida() {
+        return this.#vida
+    }
+
     set reputacao(novaReputacao) {
         if (novaReputacao >= 0) {
             this.#reputacao = novaReputacao;

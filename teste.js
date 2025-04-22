@@ -1,4 +1,4 @@
-const { Habilidades, CaixaItens } = require("./arsenal.js");
+const { Habilidades, CaixaItens, pistola, espingarda, soco, peixera, padinCico, penitencia } = require("./arsenal.js");
 const { Personagem, gerarNumeroAleatorio0_20, lampiao, francisctexeira, volante, bandidoscidade, zerufino  } = require("./personagem.js");
 const { batalha } = require("./batalha.js");
 const { Protagonista } = require("./protagonista.js");
@@ -23,6 +23,16 @@ const { Fases, Tutorial, Fase1, Fase2, Fase3, Fase4 } = require("./frases.js");
 
 // escolherProta()
 
-console.log("\n", "narracao: Após a sua luta, você consegue libertar o Batoré. Ele está meio cambaleando, com os braços marcados pelas correntes, mas sorri com alívio ao ver você.")
-      console.log("Achei que não ia sair vivo dessa... — ele diz, enquanto vocês correm pelos corredores da prisão. Mas não dá tempo de comemorar.")
-      console.log("Você escuta passos apressados atrás de vocês — guardas! Muitos. E eles não parecem felizes.","\n"," Sem pensar duas vezes, você puxa Batoré pela manga:","\n","— Corre, mano!")
+function testarBatalha () {
+      try {
+          let protagonista = escolherProta("Minirubens")
+          let inimigo = francisctexeira
+          batalha(protagonista, inimigo)
+      } catch (error) {
+          console.error('Erro em batalha', error.message)
+      } finally {
+          console.log('Executado.')
+      }
+  }
+  
+  testarBatalha()

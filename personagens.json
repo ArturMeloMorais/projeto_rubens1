@@ -2,10 +2,10 @@
     {
       "nome": "Lampião",
       "ocupacao": "Líder do cangaço",
-      "vida": 150,
-      "armadura": 20,
-      "velocidade": 20,
-      "dinheiro": 5000
+      "vida": 80,
+      "armadura": 2,
+      "velocidade": 4,
+      "dinheiro": 500
     },
 
 
