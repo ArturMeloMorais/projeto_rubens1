@@ -54,4 +54,8 @@ REFERÊNCIAS:
 
 -- Uso do JSON 3: https://focusnfe.com.br/blog/o-que-e-e-pra-que-serve-json/
 
--- Idéia do Tema : https://classroom.google.com/c/NzA0OTE0MTE4NTkw/a/NzYyMzA2MDg1ODUw/details
+-- Ideia do Tema : https://classroom.google.com/c/NzA0OTE0MTE4NTkw/a/NzYyMzA2MDg1ODUw/details
+
+-- Tutorial de GitHub: https://youtu.be/-l4Aa8wef8s?si=H7Ipv5rCjUu2hcGL
+
+-- ChatGPT para correções de códigos: chat.openai.com
